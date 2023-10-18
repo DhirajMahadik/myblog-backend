@@ -10,9 +10,9 @@ import path from 'path';
 const cloudinary = Cloudinary.v2
 
  cloudinary.config({
-    cloud_name: "djmp17jsh",
-    api_key: "144788257939745",
-    api_secret: "pU3s1YTh-zNkit2umw9S2YABNfk"
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.API_KEY,
+    api_secret: process.env.API_SECRET
   });
 
 
@@ -26,7 +26,7 @@ const cloudinary = Cloudinary.v2
 }).single('thumbnail');
 
 const router = express.Router();
-const secreteKey = 'qwertyuiop987654321'
+const secreteKey = process.env.JWT_SECRET
 
 router.post('/',verifyUser,multerUploads, (req,res)=>{
         try {

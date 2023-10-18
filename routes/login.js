@@ -4,7 +4,7 @@ import bcrypt from 'bcrypt'
 import database from '../database/config.js'
 
 const route = express.Router()
-const secreteKey = 'qwertyuiop987654321'
+const secreteKey = process.env.JWT_SECRET
 
 route.post('/login', (req, res) => {
     try {

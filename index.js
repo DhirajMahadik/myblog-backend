@@ -7,6 +7,8 @@ import allBlogsHandler from './routes/allBlogs.js'
 import singleBlogHandler from './routes/singleBlog.js'
 import categoryHandler from './routes/category.js'
 import searchHandler from './routes/searchHandler.js'
+import env from 'dotenv'
+ env.config()
 
 const app = express()
 app.use(express.json())
@@ -31,7 +33,7 @@ app.use('/api/blogs/search',searchHandler)
 
 database.connect((error)=>{
     if(error) throw error
-    app.listen(5500, ()=>{
+    app.listen(process.env.PORT, ()=>{
         console.log('server is running')
     })
 })
