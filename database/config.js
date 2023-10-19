@@ -10,4 +10,11 @@ import env from 'dotenv'
     password:process.env.DATABASE_PASSWORD
 })
 
+// database details for your reference 
+    // Tables = admin , blogs
+    // colums in tables = {
+    //     admin = user_id, username, password
+    //     blogs = id, title, category, description, thumbnail, headline, date
+    // }
+
 export default database
