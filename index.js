@@ -30,6 +30,12 @@ app.use('/api/blogs',categoryHandler)
 
 app.use('/api/blogs/search',searchHandler)
 
+// const data = {name:'dhiraj',age:21,address:'Pune'}
+
+// for(let key of Object.keys(data)){
+//     console.log(data[key])
+// }
+
 
 database.connect((error)=>{
     if(error) throw error
